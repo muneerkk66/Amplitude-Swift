@@ -2,7 +2,7 @@ import Foundation
 
 @objc(Amplitude)
 public class ObjCAmplitude: NSObject {
-    private let amplitude: Amplitude
+    private var amplitude: Amplitude
     private var plugins: [ObjCPluginWrapper] = []
 
     @objc(initWithConfiguration:)
@@ -10,6 +10,10 @@ public class ObjCAmplitude: NSObject {
         configuration: ObjCConfiguration
     ) -> ObjCAmplitude {
         ObjCAmplitude(configuration: configuration)
+    }
+
+    public func getAmplitude() -> Amplitude {
+        return self.amplitude
     }
 
     @objc(initWithConfiguration:)
